@@ -24,6 +24,21 @@ const App = () => {
           <AnimatedLines />
         </div>
       </div>
+      <div className="relative z-10">
+        <NavbarMenu />
+        <section id="home" className="min-h-screen">
+          <HomePage />
+        </section>
+        <section id="skills" className="min-h-screen">
+          <SkillsPage />
+        </section>
+        <section id="projects" className="min-h-screen">
+          <ProjectsPage />
+        </section>
+        <section id="contact" className="min-h-screen">
+          <AboutPage />
+        </section>
+      </div>
     </animated.div>
   );
 };
