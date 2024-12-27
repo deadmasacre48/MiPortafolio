@@ -7,7 +7,7 @@ import AboutPage from "./pages/about/About";
 import FloatingIcons from "./components/decoration/FloatingIcon";
 import AbstractShapes from "./components/decoration/Shapes";
 import AnimatedLines from "./components/decoration/AnimatedLines";
-import Navbar from "./components/menu/navbar";
+import NavbarMenu from "./components/menu/Navbar";
 
 const App = () => {
   const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
@@ -25,6 +25,7 @@ const App = () => {
         </div>
       </div>
       <div className="relative z-10">
+        <NavbarMenu />
         <section id="home" className="min-h-screen">
           <HomePage />
         </section>
