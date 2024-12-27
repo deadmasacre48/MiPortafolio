@@ -1,6 +1,5 @@
 import React from "react";
 import { animated, useSpring } from "react-spring";
-import Navbar from "./components/menu/navbar";
 import HomePage from "./pages/home/Home";
 import SkillsPage from "./pages/skills/Skills";
 import ProjectsPage from "./pages/projects/Projects";
@@ -8,6 +7,7 @@ import AboutPage from "./pages/about/About";
 import FloatingIcons from "./components/decoration/FloatingIcon";
 import AbstractShapes from "./components/decoration/Shapes";
 import AnimatedLines from "./components/decoration/AnimatedLines";
+import Navbar from "./components/menu/navbar";
 
 const App = () => {
   const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
