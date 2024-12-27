@@ -25,7 +25,6 @@ const App = () => {
         </div>
       </div>
       <div className="relative z-10">
-        <Navbar />
         <section id="home" className="min-h-screen">
           <HomePage />
         </section>
