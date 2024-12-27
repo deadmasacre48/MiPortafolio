@@ -1,23 +1,21 @@
 import React from "react";
-import { useSpring, animated } from "@react-spring/web";
-import AnimatedLines from "./components/decoration/AnimatedLines";
-import AbstractShapes from "./components/decoration/Shapes";
-import FloatingIcons from "./components/decoration/FloatingIcon";
+import { animated, useSpring } from "react-spring";
 import Navbar from "./components/menu/navbar";
 import HomePage from "./pages/home/Home";
+import SkillsPage from "./pages/skills/Skills";
+import ProjectsPage from "./pages/projects/Projects";
+import AboutPage from "./pages/about/About";
+import FloatingIcons from "./components/decoration/FloatingIcon";
+import AbstractShapes from "./components/decoration/Shapes";
+import AnimatedLines from "./components/decoration/AnimatedLines";
 
 const App = () => {
-  const fade = useSpring({
-    from: {
-      opacity: 0,
-    },
-    opacity: 1,
-  });
+  const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   return (
     <animated.div
       style={fade}
-      className="relative min-h-screen w-screen h-screen bg-gradient-to-tr from-purplesss via-purpless to-purples  overflow-hidden"
+      className="relative min-h-screen w-full bg-gradient-to-tr from-purplesss via-purpless to-purples overflow-x-hidden"
     >
       <div className="fixed inset-0 z-0">
         <FloatingIcons />
@@ -28,7 +26,18 @@ const App = () => {
       </div>
       <div className="relative z-10">
         <Navbar />
-        <HomePage />
+        <section id="home" className="min-h-screen">
+          <HomePage />
+        </section>
+        <section id="skills" className="min-h-screen">
+          <SkillsPage />
+        </section>
+        <section id="projects" className="min-h-screen">
+          <ProjectsPage />
+        </section>
+        <section id="contact" className="min-h-screen">
+          <AboutPage />
+        </section>
       </div>
     </animated.div>
   );

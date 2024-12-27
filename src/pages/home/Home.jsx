@@ -52,7 +52,7 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-start justify-center px-4 sm:px-8 md:px-16 lg:px-28 relative">
-      <div className="w-full max-w-4xl mx-auto">
+      <div className="w-full mx-auto">
         <motion.div
           initial="hidden"
           animate="visible"
