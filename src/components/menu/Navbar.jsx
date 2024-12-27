@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 
-const Navbar = () => {
+function Navbar() {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [activeSection, setActiveSection] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -196,6 +196,6 @@ const Navbar = () => {
       </AnimatePresence>
     </motion.nav>
   );
-};
+}
 
 export default Navbar;
