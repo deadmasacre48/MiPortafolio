@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { FaDesktop } from "react-icons/fa";
+import { FaDesktop, FaFileDownload } from "react-icons/fa";
 import { IoPlanetOutline } from "react-icons/io5";
 import { LuGamepad2 } from "react-icons/lu";
 import { MdOutlinePhoneAndroid, MdOutlineGamepad } from "react-icons/md";
@@ -48,6 +48,15 @@ const HomePage = () => {
         ease: "easeOut",
       },
     },
+  };
+
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/MiPortafolio/cv.pdf";
+    link.download = "Maxwell-CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const iconInfo = [
@@ -129,6 +138,22 @@ const HomePage = () => {
             </span>
             .
           </h2>
+
+          <motion.button
+            onClick={handleDownloadCV}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: isVisible ? 1 : 0,
+              y: isVisible ? 0 : 20,
+            }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="mt-6 ml-4 sm:ml-12 md:ml-20 flex items-center gap-2 bg-purpletoy2 text-white px-6 py-3 rounded-full
+                     hover:bg-purpletoy hover:shadow-lg hover:shadow-purpletoy2/30 transition-all duration-300
+                     text-sm sm:text-base font-medium"
+          >
+            <FaFileDownload className="w-4 h-4 sm:w-5 sm:h-5" />
+            Descargar CV
+          </motion.button>
         </motion.div>
 
         <motion.div
@@ -156,7 +181,7 @@ const HomePage = () => {
                 }}
               >
                 <div
-                  className="bg-white rounded-full p-3 flex items-center justify-center shadow-lg 
+                  className="bg-white/5 backdrop-blur-sm drop-shadow-md rounded-full p-3 flex items-center justify-center shadow-lg 
                    group-hover:bg-purpletoy2 group-hover:shadow-purpletoy2/50 transition-all duration-300
                    w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
                 >

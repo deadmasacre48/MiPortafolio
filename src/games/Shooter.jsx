@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { FaBox } from "react-icons/fa";
 
 const ShootingGame = () => {
   const [targets, setTargets] = useState([]);
@@ -6,7 +7,6 @@ const ShootingGame = () => {
   const [gameArea, setGameArea] = useState({ width: 0, height: 0 });
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detectar si es dispositivo móvil
   useEffect(() => {
     setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
 
@@ -22,7 +22,6 @@ const ShootingGame = () => {
     return () => window.removeEventListener("resize", updateGameArea);
   }, []);
 
-  // Generar objetivos
   const spawnTarget = useCallback(() => {
     const newTarget = {
       id: Date.now(),
