@@ -36,7 +36,7 @@ const App = () => {
           <ProjectsPage />
         </section>
         <section id="contact" className="min-h-screen">
-          <AboutPage />
+          {/* {<AboutPage />} */}
         </section>
       </div>
     </animated.div>

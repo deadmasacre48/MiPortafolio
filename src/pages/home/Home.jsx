@@ -1,10 +1,33 @@
 import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 import { FaDesktop } from "react-icons/fa";
 import { IoPlanetOutline } from "react-icons/io5";
 import { LuGamepad2 } from "react-icons/lu";
 import { MdOutlinePhoneAndroid, MdOutlineGamepad } from "react-icons/md";
 
 const HomePage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   const titleVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
@@ -51,25 +74,32 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-start justify-center px-4 sm:px-8 md:px-16 lg:px-28 relative">
+    <div
+      ref={ref}
+      className="min-h-screen flex flex-col items-start justify-center px-4 sm:px-8 md:px-16 lg:px-28 relative"
+    >
       <div className="w-full mx-auto">
         <motion.div
           initial="hidden"
-          animate="visible"
+          animate={isVisible ? "visible" : "hidden"}
           variants={titleVariants}
           className="relative"
         >
           <h1 className="flex flex-row items-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold py-5 md:py-10">
-            <span className="break-words">DESARROLLADOR</span>
+            <span className="break-words">WELCOME</span>
             <motion.div
-              animate={{
-                rotate: [0, -10, 10, -10, 0],
-                transition: {
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                },
-              }}
+              animate={
+                isVisible
+                  ? {
+                      rotate: [0, -10, 10, -10, 0],
+                      transition: {
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                      },
+                    }
+                  : { rotate: 0 }
+              }
               className="ml-2 sm:ml-5"
             >
               <LuGamepad2 className="text-purpletoy w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16" />
@@ -79,7 +109,7 @@ const HomePage = () => {
 
         <motion.div
           initial="hidden"
-          animate="visible"
+          animate={isVisible ? "visible" : "hidden"}
           variants={descriptionVariants}
           className="relative z-10"
         >
@@ -103,13 +133,28 @@ const HomePage = () => {
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{
+            opacity: isVisible ? 1 : 0,
+            y: isVisible ? 0 : 30,
+          }}
           transition={{ delay: 1.2, duration: 0.8 }}
           className="mt-8 md:mt-12 pl-4 sm:pl-12 md:pl-20"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-16">
             {iconInfo.map((item, index) => (
-              <div key={index} className="relative group">
+              <motion.div
+                key={index}
+                className="relative group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{
+                  opacity: isVisible ? 1 : 0,
+                  y: isVisible ? 0 : 20,
+                }}
+                transition={{
+                  delay: 1.2 + index * 0.1,
+                  duration: 0.5,
+                }}
+              >
                 <div
                   className="bg-white rounded-full p-3 flex items-center justify-center shadow-lg 
                    group-hover:bg-purpletoy2 group-hover:shadow-purpletoy2/50 transition-all duration-300
@@ -133,7 +178,7 @@ const HomePage = () => {
                   </p>
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white transform rotate-45" />
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
