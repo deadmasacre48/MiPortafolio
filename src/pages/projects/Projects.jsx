@@ -19,7 +19,7 @@ const ProjectsPage = () => {
       description:
         "Aplicacion para Android y iOS para compartir chismes e historias de forma anónima. Cuenta con un sistema de autenticación y base de datos en tiempo real.",
       image: elchismeImage,
-      tags: ["MySQL", "Flutter", "Firebase"],
+      tags: ["SQLflite", "Flutter", "Firebase"],
       liveUrl: "#",
     },
     {
