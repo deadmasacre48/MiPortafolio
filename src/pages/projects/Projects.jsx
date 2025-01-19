@@ -2,33 +2,33 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FaProjectDiagram, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import atenaImage from "../../assets/atena.png";
+import bathroomImage from "../../assets/bathroom.png";
 import elchismeImage from "../../assets/elchisme.png";
 import strunggleImage from "../../assets/strunggle.png";
 import medvuoImage from "../../assets/medvuo.png";
-import bathroomImage from "../../assets/bathroom.png";
+import zapateria from "../../assets/zapateria.png";
 
 const ProjectsPage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef();
 
-  // Datos de ejemplo para los proyectos
   const projects = [
     {
       id: 1,
-      title: "El Chisme",
+      title: "Zapateria",
       description:
-        "Aplicacion para Android y iOS para compartir chismes e historias de forma anónima. Cuenta con un sistema de autenticación y base de datos en tiempo real.",
-      image: elchismeImage,
-      tags: ["SQLflite", "Flutter", "Firebase"],
+        "Aplicacion de ventas para una zapateria. Cuenta con un sistema de inventario y ventas, funciona a traves de mequinas de facturacion por via Bluetooth.",
+      image: zapateria,
+      tags: ["SQLflite", "Flutter", "Dart", "Firebase"],
       liveUrl: "#",
     },
     {
       id: 2,
-      title: "El Chisme Web",
+      title: "El Chisme",
       description:
-        "Port de la aplicación de El Chisme para la web. Cuenta con las mismas funcionalidades que la aplicación móvil.",
+        "Red social de chismes tanto web como aplicacion. Los usuarios pueden publicar chismes anonimos y comentar en chismes de otros usuarios. Cuenta con un sistema de autenticación y base de datos en tiempo real.",
       image: elchismeImage,
-      tags: ["React", "Firebase", "MySQL", "TailwindCSS"],
+      tags: ["React", "Firebase", "MySQL", "TailwindCSS", "NodeJS", "Vite"],
       liveUrl: "http://Elchismes.com",
     },
     {
@@ -46,7 +46,7 @@ const ProjectsPage = () => {
       description:
         "Videojuego de supervivencia en 3D para Android y Pc. El jugador debe sobrevivir a hordas de zombies y recolectar recursos para mejorar sus armas y equipo en la ciudad Zilcon.",
       image: strunggleImage,
-      tags: ["Godot", "GdScript", "Blender", "InKScape", "MagicaVoxel"],
+      tags: ["Godot", "GdScript", "Blender", "InkScape", "MagicaVoxel"],
       liveUrl: "https://lunarygame.itch.io/strunggle-zombie",
     },
     {

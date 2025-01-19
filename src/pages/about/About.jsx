@@ -11,7 +11,7 @@ const ContactPage = () => {
     {
       id: 1,
       platform: "Instagram",
-      handle: "@max zai",
+      handle: "@max._.zai",
       icon: FaInstagram,
       link: "https://instagram.com/max._.zai",
       color: "from-pink-500/50 to-purple-500/50",
@@ -19,7 +19,7 @@ const ContactPage = () => {
     {
       id: 2,
       platform: "Email",
-      handle: "Maxwell@email.com",
+      handle: "tejadarosadomaxwellmax@email.com",
       icon: FaEnvelope,
       link: "mailto:tejadarosadomaxwellmax@email.com",
       color: "from-blue-500/50 to-teal-500/50",
@@ -142,7 +142,7 @@ const ContactPage = () => {
                     <h3 className="text-lg font-semibold text-white">
                       {contact.platform}
                     </h3>
-                    <p className="text-gray-300">{contact.handle}</p>
+                    <p className="text-gray-300 text-xs">{contact.handle}</p>
                   </div>
                   {copied === contact.platform ? (
                     <span className="text-green-400 text-sm">¡Copiado!</span>
