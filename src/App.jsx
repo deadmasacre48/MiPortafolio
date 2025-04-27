@@ -15,7 +15,7 @@ const App = () => {
   return (
     <animated.div
       style={fade}
-      className="relative min-h-screen w-full bg-gradient-to-tr from-purplesss via-purpless to-purples overflow-x-hidden"
+      className="relative min-h-screen w-full bg-gradient-to-tr from-purplesss via-purpless to-purples"
     >
       <div className="fixed inset-0 z-0">
         <FloatingIcons />
