@@ -1,7 +1,7 @@
 import React from "react";
 import { ProjectIcons } from "../../components/projects/ProjectIcons";
 import ProjectItem from "../../components/projects/ProjectItem";
-import Header from "../../components/header";
+import Header from "../../components/HeaderBasic";
 
 const ProjectsPage = () => {
   return (

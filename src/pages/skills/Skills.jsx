@@ -1,7 +1,7 @@
 import React from "react";
 import SkillsItem from "../../components/skills/SkillsItem";
 import { SkillsIcons } from "../../components/skills/SkillsIcons";
-import Header from "../../components/header";
+import Header from "../../components/HeaderBasic";
 
 const SkillsPage = () => {
   return (
